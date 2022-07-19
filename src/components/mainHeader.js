@@ -3,7 +3,7 @@ import React, {useState, useContext} from "react";
 function MainHeader()
 {
     return(
-    <div> TEST </div> 
+    <div className="mainHeader"> MainHeader </div> 
     );
 };
 

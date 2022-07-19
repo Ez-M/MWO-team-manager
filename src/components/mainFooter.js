@@ -3,7 +3,7 @@ import React, {useState, useContext} from "react";
 function MainFooter()
 {
     return(
-    <div> TEST </div> 
+    <div className="mainFooter"> MainFooter </div> 
     );
 };
 
