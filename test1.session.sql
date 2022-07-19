@@ -1,16 +1,16 @@
 
 
 
--- USER STUFF
+
 
 -- @BLOCK
 CREATE TABLE Users(
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     email VARCHAR(255) NOT NULL UNIQUE,
     username VARCHAR(255) NOT NULL,
     bio TEXT,
-    teamName VARCHAR(255),
-    team_id INT,
+    team_id INT NULL,
+    PRIMARY KEY (id),
     FOREIGN KEY(team_id) REFERENCES Teams(id),
     unitName VARCHAR(255),
     country VARCHAR(2)
@@ -21,22 +21,22 @@ SELECT * FROM Users;
 
 
 
--- TEAMS STUFF
+
 
 -- @BLOCK
 CREATE TABLE Teams(
     id INT PRIMARY KEY AUTO_INCREMENT,
     teamName VARCHAR(255) NOT NULL,
-    admin_id INT,
-
-
+    admin_id INT
 );
 
 -- @BLOCK
 SELECT * FROM Teams;
 
 
--- PILOTS STUFF
+
+
+
 
 -- @BLOCK
 CREATE TABLE Pilots(
@@ -56,45 +56,54 @@ CREATE TABLE Pilots(
 
 
 
--- DATA INSERT SCRIPTS
+
 
 
 -- @BLOCK
-INSERT INTO Users(email, username, country)
+INSERT INTO Users(email, username, bio, team_id, unitName, country)
 VALUES (
     'test@testmail1.com',
     'TestUser1',
+    "testBio",
+    "1",
+    "TestUnit",
     "US"
     );
 
-    -- @BLOCK
-INSERT INTO Users(email, username, country)
+
+
+
+
+     -- @BLOCK
+INSERT INTO Users(email, username, bio, team_id, unitName, country)
 VALUES (
     'test@testmail2.com',
     'TestUser2',
-    "UK"
+    "testBio2",
+    "2",
+    "TestUnit2",
+    "Uk"
+    );
+
+         -- @BLOCK
+INSERT INTO Users(email, username, bio, unitName, country)
+VALUES (
+    'test@testmail3.com',
+    'TestUser3',
+    "testBio3",
+    
+    "TestUnit3",
+    "Uk"
     );
 
     -- @BLOCK
-INSERT INTO Teams(teamName, admin_id)
+INSERT INTO Teams(teamName)
 VALUES (
-    'testTeam1',
-    '',
-    INSERT INTO Teams(teamName, admin_id)
-VALUES (
-    'testTeam2',
-    '',
-    INSERT INTO Teams(teamName, admin_id)
-VALUES (
-    'testTeam3',
-    ''
-    );
-
-
-
-
-
+    'testTeam1');
 
 
     -- @BLOCK
-   -- drop table pilots;
+    drop table users;
+
+        -- @BLOCK
+    drop table teams;
