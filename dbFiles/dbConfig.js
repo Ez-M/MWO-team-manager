@@ -1,15 +1,11 @@
-const config = {
-    user: 'root',
+//sql server connection config file
+
+
+const config = {      
+    host: 'localhost',
+    user: 'root', 
     password: 'SQLFish42@',
-    server: 'Local instance MySQL80',
-    database: 'mech-site',
-    options: {
-        trustServerCertificate: true,
-        trustedConnection: false,
-        enableArithAbort: true,
-        instancename: 'MySQL80'
-    },
-    port: 3306
+    database: 'mech-site',  
 }
 
 module.exports = config;
