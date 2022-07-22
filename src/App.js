@@ -19,6 +19,8 @@ function App() {
   const [returnedData, setReturnedData] = useState(['Hello!']);
 
 
+
+
   const getData = async (url) => {
     const newData = await fetch(url, {
       method: 'GET',
@@ -29,12 +31,17 @@ function App() {
     })
     .then(res => res.json());
     console.log(newData);
-    setReturnedData(newData.result)
+    setReturnedData(newData)
+    console.log(returnedData);
+    
   };
+
+
+
 
   return(
     <div className="App">
-      <button onClick={()=> getData('/quit')}>Click</button> {returnedData}
+      <button onClick={()=> getData('/getUsers')}>Click</button>
     </div>
   )
 };

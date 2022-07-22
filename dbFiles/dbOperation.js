@@ -12,23 +12,6 @@ const connection = mysql.createConnection({
 
 
 
-//gets user data
-const getUsers = async() => {
-    try{
 
 
-        
-  const userData = await connection.query('SELECT * FROM USERS', function(err, rows, field)
-{
-    if (err) throw err;
-    console.log(rows[0]);
-});
-
-connection.end();
-    }
-    catch(error) {
-        // console.log(error);
-    }
-}
-
-module.exports = {getUsers}
+module.exports = {connection};
