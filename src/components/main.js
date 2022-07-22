@@ -1,9 +1,16 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, Component} from "react";
+
+import {MainHeader, MainFooter, MainBody} from "../components/componentList";
+
 
 function Main()
 {
     return(
-    <div> TEST </div> 
+        <React.Fragment>
+    <MainHeader/>
+    <MainBody/>
+    <MainFooter/>
+    </React.Fragment>
     );
 };
 

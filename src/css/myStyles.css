@@ -1,0 +1,41 @@
+
+:root {
+--backgroundBlack: #0c0e12ff;
+--hotpink: #dc43a3ff;
+--blue: #39598cff;
+--darkBlue: #162f37ff;
+--darkTeal: #1b4748ff;
+
+}
+
+*{
+    background-color: var(--backgroundBlack);
+
+    color: var(--hotpink);
+}
+
+
+.mainHeader{
+    height: 10vh;
+
+    
+
+    border-bottom: 5px solid var(--hotpink);    
+
+    color: var(--hotpink);
+}
+
+.mainBody{
+    height: 80vh;
+
+
+    color: var(--blue);
+    
+}
+
+.mainFooter{
+    height: 10vh;
+
+    border-top: 5px solid var(--hotpink);
+
+}
