@@ -3,6 +3,8 @@ const cors = require("cors");
 const { connection } = require("./dbFiles/dbOperation.js");
 const { response } = require("express");
 
+const user = require('./dbFiles/users');
+
 const API_PORT = process.env.PORT || 5000;
 const app = express();
 
@@ -28,15 +30,10 @@ app.get("/test", function (req, res) {
   res.send({ result: "test" });
 });
 
-app.get("/getUsers", (req, res) => {
-  let sql = "SELECT * FROM USERS";
-  connection.query(sql, function (err, results) {
-    if (err) throw err;
-    //  console.log(results);
+app.get("/getAllUsers", user.getAllUsers);
 
-    // console.log(data)
-    res.send(results);
-  });
-});
+
+app.get("/getUser/:id", user.getUser);
+
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT} `));
