@@ -3,7 +3,8 @@ const cors = require("cors");
 const { connection } = require("./dbFiles/dbOperation.js");
 const { response } = require("express");
 
-const user = require('./dbFiles/users');
+const user = require('./controllers/userControllers');
+const team = require('./controllers/teamControllers');
 
 const API_PORT = process.env.PORT || 5000;
 const app = express();
@@ -29,6 +30,9 @@ app.get("/test", function (req, res) {
   console.log("called api test");
   res.send({ result: "test" });
 });
+
+
+// ROUTES
 
 app.get("/getAllUsers", user.getAllUsers);
 

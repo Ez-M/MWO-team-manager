@@ -62,15 +62,7 @@ function App() {
   const testParam = 1; 
 
   return(
-    <React.Fragment>
-    <div className="App">
-      <button onClick={()=> getData('/getAllUsers')}>Click</button>
-    </div>
-
-    <div className="App">
-      <button onClick={()=> getData(`/getUser/` + testParam)}>Click</button>
-    </div>
-    </React.Fragment>
+    <Main/>
   )
 };
 
