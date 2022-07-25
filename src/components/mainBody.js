@@ -33,11 +33,7 @@ function MainBody()
        return potato;
   
       })
-      .then((data) =>{
-        for (const key in data){
-          data.push("kek");
-        };
-        
+      .then((data) =>{    
         console.log(data)
       })
       // console.log(newData);
@@ -53,14 +49,22 @@ function MainBody()
         <div className="mainBody"> MainBody 
         
         <div>
-      <button onClick={()=> getData('/getAllUsers')}>Click</button>
+      <button onClick={()=> getData('/users')}>Click</button>
     </div>
 
     <div>
-      <button onClick={()=> getData(`/getUser/` + testParam)}>Click</button>
+      <button onClick={()=> getData(`/user/` + testParam)}>Click</button>
+    </div>
+
+
+        <div>
+      <button onClick={()=> getData('/teams')}>Click</button>
+    </div>
+
+    <div>
+      <button onClick={()=> getData(`/team/` + testParam)}>Click</button>
     </div>
         </div> 
-    
     </React.Fragment>
     );
 };

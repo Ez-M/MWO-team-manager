@@ -34,10 +34,15 @@ app.get("/test", function (req, res) {
 
 // ROUTES
 
-app.get("/getAllUsers", user.getAllUsers);
+app.get("/users", user.getAllUsers);
 
 
-app.get("/getUser/:id", user.getUser);
+app.get("/user/:id", user.getUser);
+
+app.get("/teams", team.getAllTeams);
+
+
+app.get("/team/:id", team.getTeam);
 
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT} `));

@@ -8,17 +8,8 @@ exports.getAllUsers = function(req, res){
 
     connection.query(sql, function (err, results, next) {
       if (err) throw err;
-      //  console.log(results);
-        let tempmail =[]
-            for (const key in results) {
-                if (results[key].email) {
-                    tempmail.push(results[key].email);
-                    
-                }
-            }
-        
-      // console.log(data)
-      res.send(tempmail);      
+      
+      res.send(results);      
     });
   }
 
@@ -30,8 +21,7 @@ exports.getUser = function(req, res){
 
     connection.query(sql, function (err, results, next) {
       if (err) throw err;
-       console.log(results);
-       console.log('kek');
+       console.log(results);       
         
         
       // console.log(data)
