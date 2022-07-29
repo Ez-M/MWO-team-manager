@@ -8,6 +8,7 @@ CREATE TABLE Users(
     id INT AUTO_INCREMENT,
     email VARCHAR(255) NOT NULL UNIQUE,
     username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     bio TEXT,
     team_id INT NULL,
     PRIMARY KEY (id),
@@ -71,6 +72,13 @@ VALUES (
     );
 
 
+-- @BLOCK
+INSERT INTO Users(email, username, password)
+VALUES (
+    'test@testmail1.com',
+    'TestUser1',
+    "testpass"
+    );
 
 
 
@@ -103,7 +111,7 @@ VALUES (
 
 
     -- @BLOCK
-    drop table users;
+    drop table users ;
 
         -- @BLOCK
     drop table teams;
