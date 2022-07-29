@@ -3,8 +3,7 @@ import React, {useState, useContext} from "react";
 function MainBody()
 {
 
-    const [returnedData, setReturnedData] = useState([]);
-
+    const [returnedData, setReturnedData] = useState("");
 
 
 
@@ -34,7 +33,9 @@ function MainBody()
   
       })
       .then((data) =>{    
-        console.log(data)
+        console.log(data)   
+        setReturnedData(JSON.stringify(data));
+              
       })
       // console.log(newData);
       // setReturnedData(newData);
@@ -46,7 +47,7 @@ function MainBody()
 
     return(
     <React.Fragment>
-        <div className="mainBody"> MainBody 
+        <div className="mainBody"> {returnedData} 
         
         <div>
       <button onClick={()=> getData('/users')}>Click</button>
