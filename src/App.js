@@ -4,7 +4,7 @@ import './css/myStyles.css';
 
 import React, {useEffect, useState} from "react";
 
-import Main from "./components/main";
+import Home from "./pages/home";
 
 import {BroswerRouter, Routes, Route, BrowserRouter } from 'react-router-dom'
 
@@ -23,11 +23,26 @@ function App() {
   return(
    <BrowserRouter>
    <Routes>
-    <Route path='/' element = {<Main />}/>
-    {/* <Route path='user' element = {<User />}/> */}
-    {/* <Route path='teams' element = {<Teams />}/> */}
-      {/* <Route path=':teamId' element = {<Team />}/> */}
-    {/* <Route path='user' element = {<User />}/> */}  
+    <Route path='/' element = {<App />}/>
+    <Route index element = {<Home />}/>
+    <Route path='home' element = {<Home />}/>
+    {/* <Route path='user' element = {<User />}>    
+         <Route path='new' element = {<NewUser />}/> 
+       <Route/>    
+      */}
+
+    {/* <Route path='teams' element = {<Teams />} >
+          <Route path=':teamId' element = {<TeamDash />}> 
+            <Route path='players' element = {<TeamPlayers />}/> 
+            <Route path='mechs' element = {<TeamInventory />}/> 
+            <Route path='calender' element = {<TeamCalender />}/> 
+            <Route path='calender' element = {<TeamCalender />}/> 
+          <Route/> 
+
+           <Route path=':new' element = {<NewTeam />}/> 
+        <Route/> 
+      */}
+    
     </Routes>
     </BrowserRouter>
     /*  
