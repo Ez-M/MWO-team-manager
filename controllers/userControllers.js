@@ -1,3 +1,4 @@
+const { password } = require("../dbFiles/dbConfig.js");
 const { connection } = require("../dbFiles/dbOperation.js");
 
 
@@ -28,4 +29,23 @@ exports.getUser = function(req, res){
       res.send(results);      
     });
   }
+
+  exports.postUser = function(req, res){
+    const body = req.body;
+
+    if(!(body.username && body.email && body.password)) {
+      return res.status(400).send({ error: "submit rejected: missing data"});
+      
+    }
+  
+          let sql = `INSERT INTO Users(email, username, password) VALUES (${body.email}, ${body.username}, ${body.password})`;
+  
+      connection.query(sql, function (err, results) {
+        if (err) throw err;
+        //  console.log(results);
+  
+        // console.log(data)
+        res.send(results);
+      });
+    }
 

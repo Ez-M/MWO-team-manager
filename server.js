@@ -5,6 +5,7 @@ const { response } = require("express");
 
 const user = require('./controllers/userControllers');
 const team = require('./controllers/teamControllers');
+const { default: App } = require("./src/App.js");
 
 const API_PORT = process.env.PORT || 5000;
 const app = express();
@@ -35,6 +36,8 @@ app.get("/test", function (req, res) {
 // ROUTES
 
 app.get("/users", user.getAllUsers);
+
+app.post('user', user.postUser)
 
 
 app.get("/user/:id", user.getUser);
