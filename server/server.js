@@ -5,7 +5,7 @@ const { response } = require("express");
 
 const user = require('./controllers/userControllers');
 const team = require('./controllers/teamControllers');
-const { default: App } = require("./src/App.js");
+
 
 const API_PORT = process.env.PORT || 5000;
 const app = express();
@@ -46,6 +46,7 @@ app.get("/teams", team.getAllTeams);
 
 
 app.get("/team/:id", team.getTeam);
+
 
 
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT} `));
